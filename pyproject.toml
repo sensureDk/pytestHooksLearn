@@ -1,0 +1,34 @@
+[project]
+name = "pytestHooks"
+version = "0.1.0"
+description = "pytsthooksLearn"
+authors = [
+    {name = "sensure", email = "66668888@qq.com"},
+]
+dependencies = [
+    "pytest>=8.1.0",
+    "requests>=2.31.0",
+    "black>=24.2.0",
+    "isort>=5.13.2",
+    "flake8>=5.0.4",
+]
+requires-python = ">=3.8"
+readme = "README.md"
+license = {text = "nothing"}
+
+[build-system]
+requires = ["pdm-backend"]
+build-backend = "pdm.backend"
+
+
+[tool.pdm]
+distribution = true
+
+[tool.pdm.build]
+package-dir = "src"
+
+
+[project.entry-points.pytest11]
+result_log = "pytest_hooks.plugin"
+
+
